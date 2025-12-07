@@ -57,7 +57,7 @@ public class LesserTPAction implements SpellAction {
             );
         }
 
-        if(HexConfig.server().canTeleportInThisDimension(ctx.getWorld().getRegistryKey()))
+        if(!HexConfig.server().canTeleportInThisDimension(ctx.getWorld().getRegistryKey()))
             MishapThrowerJava.throwMishap(new MishapBadLocation(fract, "bad_dimension"));
 
 		return new SpellAction.Result(
